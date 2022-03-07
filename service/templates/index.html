@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{data.title}}</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/check_db_items.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/db_settings_items.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/new_user_items.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register_items.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-3.4.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+    </head>
+    <body>
+        <header>
+            Welcome to Slash Bridge
+        </header>
+
+        <main>
+            <section class="menubar">
+                <svg class="home_ico" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#34495e"><path d="M86,8.0625l-83.3125,67.1875l1.32275,1.75842c3.67381,4.89931 10.68894,5.74428 15.42163,1.85815l66.56812,-54.67908l66.56811,54.67908c4.73269,3.88612 11.74782,3.04116 15.42163,-1.85815l1.32276,-1.75842l-24.1875,-19.50537v-34.24463h-24.1875v14.73926zM86,34.9375l-64.5,51.0625v64.5h129v-56.4375zM69.875,91.375h32.25v48.375h-32.25z"></path></g></g></svg>
+                <svg class="check_db_ico" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#34495e"><path d="M86,0c-19.42052,0 -37.01467,3.49554 -50.0614,9.36594c-6.52337,2.9352 -11.93354,6.46201 -15.84281,10.62234c-3.0495,3.24534 -5.17599,6.97184 -5.97297,10.97172h-0.36281v3.44v96.32c0,19.28808 31.73056,34.4 72.24,34.4c5.95808,0 11.69256,-0.36174 17.2,-0.98094v-6.90688c-5.40424,0.62952 -11.12496,1.00781 -17.2,1.00781c-39.0956,0 -65.36,-14.23128 -65.36,-27.52v-16.15187c11.43112,11.67192 36.06496,19.59187 65.36,19.59187c5.95464,0 11.70288,-0.34158 17.2,-0.96078v-2.82187c0,-1.46544 0.25515,-2.86482 0.69203,-4.18578c-5.60376,0.68456 -11.55555,1.08844 -17.89203,1.08844c-39.0956,0 -65.36,-14.23128 -65.36,-27.52v-19.47765c3.86464,3.93215 9.05232,7.3012 15.2986,10.11172c13.04674,5.8704 30.64088,9.36594 50.0614,9.36594c19.42052,0 37.01467,-3.49554 50.0614,-9.36594c6.24627,-2.81052 11.43395,-6.17957 15.2986,-10.11172v11.23375c2.49744,1.03888 4.80912,2.43595 6.88,4.13875v-61.25485v-3.44h-0.36281c-0.79698,-3.99988 -2.92347,-7.72637 -5.97297,-10.97172c-3.90927,-4.16034 -9.31945,-7.68714 -15.84281,-10.62234c-13.04674,-5.8704 -30.64088,-9.36594 -50.0614,-9.36594zM86,6.88c18.5846,0 35.38755,3.42843 47.23953,8.76125c5.92599,2.66641 10.59336,5.80842 13.64578,9.05688c3.05243,3.24846 4.47469,6.45716 4.47469,9.70187c0,3.24471 -1.42226,6.45342 -4.47469,9.70187c-3.05243,3.24846 -7.71979,6.39047 -13.64578,9.05688c-11.85198,5.33282 -28.65493,8.76125 -47.23953,8.76125c-18.5846,0 -35.38755,-3.42843 -47.23953,-8.76125c-5.92599,-2.66641 -10.59336,-5.80842 -13.64578,-9.05688c-3.05242,-3.24845 -4.47469,-6.45716 -4.47469,-9.70187c0,-3.24471 1.42226,-6.45342 4.47469,-9.70187c3.05243,-3.24846 7.71979,-6.39047 13.64578,-9.05688c11.85198,-5.33282 28.65493,-8.76125 47.23953,-8.76125zM20.64,49.32235c3.86464,3.93215 9.05232,7.3012 15.2986,10.11172c13.04674,5.8704 30.64088,9.36594 50.0614,9.36594c19.42052,0 37.01467,-3.49554 50.0614,-9.36594c6.24627,-2.81052 11.43395,-6.17957 15.2986,-10.11172v16.03765c0,3.24471 -1.42226,6.45342 -4.47469,9.70187c-3.05243,3.24846 -7.71979,6.39047 -13.64578,9.05688c-11.85198,5.33282 -28.65493,8.76125 -47.23953,8.76125c-18.5846,0 -35.38755,-3.42843 -47.23953,-8.76125c-5.92599,-2.66641 -10.59336,-5.80842 -13.64578,-9.05688c-3.05242,-3.24845 -4.47469,-6.45716 -4.47469,-9.70187zM141.04,96.32c-11.352,0 -20.64,9.62931 -20.64,21.32531v6.19469h-3.78265c-3.784,0 -6.53735,3.09735 -6.53735,6.53735v34.74265c0,3.784 2.75335,6.88 6.53735,6.88h48.84531c3.44,0 6.53735,-3.09735 6.53735,-6.53735v-35.08531c0,-3.44 -2.75335,-6.53735 -6.53735,-6.53735h-3.78265v-6.19469c0,-11.696 -9.288,-21.32531 -20.64,-21.32531zM141.04,103.2c7.568,0 13.76,6.53331 13.76,14.44531v6.19469h-27.52v-6.19469c0,-7.912 6.192,-14.44531 13.76,-14.44531zM116.96,130.72h48.16v34.4h-48.16zM141.04,141.04c-2.752,0 -4.81735,2.06535 -4.81735,4.81735c0,1.376 0.688,2.408 1.72,3.44v4.46797c0,1.72 1.37735,3.09734 3.09735,3.09734c1.72,0 3.09735,-1.37734 3.09735,-3.09734v-4.46797c1.032,-1.032 1.72,-2.064 1.72,-3.44c0,-2.752 -2.06535,-4.81735 -4.81735,-4.81735z"></path></g></g></svg>
+                <svg class="new_user_ico" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="50" height="50"
+                viewBox="0 0 226 226"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#34495e"><path d="M99.35172,9.04c-17.37375,0.38844 -29.85672,5.42047 -37.13109,14.9725c-8.21016,10.80562 -9.64031,26.90812 -4.37875,49.19031c-1.85391,2.40125 -3.54891,6.23266 -3.1075,11.47656c1.32422,9.78156 5.04969,13.80719 8.08656,15.44922c1.51844,8.13953 5.96781,16.77344 9.95812,20.85203c0.01766,1.00641 0.03531,1.9775 0.05297,2.94859c0.08828,4.32578 0.14125,8.06891 -0.42375,12.87141c-2.47188,6.35625 -11.65313,9.99344 -22.26453,14.19562c-17.63859,6.99188 -39.58531,15.69641 -41.10375,43.13422l-0.24719,4.74953h105.88453c-0.86516,-1.78328 -1.60672,-3.63719 -2.31297,-5.50875c-1.32422,-15.96125 -10.66438,-31.55172 -10.66438,-31.55172l9.79922,-8.58094c-1.25359,-2.50719 -2.75437,-4.41406 -4.2375,-5.96781l8.40438,-4.66125c0.67094,-1.28891 1.43016,-2.52484 2.18937,-3.76078c0.93578,-1.53609 1.94219,-3.01922 2.98391,-4.44938c0.24719,-0.31781 0.45906,-0.65328 0.70625,-0.97109c1.30656,-1.71266 2.70141,-3.37234 4.16688,-4.94375c-0.03531,-2.47187 -0.05297,-4.89078 -0.05297,-7.55687c3.91969,-4.13156 8.08656,-12.78312 9.81687,-20.6225c3.24875,-1.53609 7.30969,-5.52641 8.24547,-15.85531c0.42375,-5.085 -0.97109,-8.82812 -2.89562,-11.22937c2.98391,-9.35781 8.05125,-30.12156 -0.2825,-43.89344c-3.79609,-6.26797 -9.72859,-10.20531 -17.67391,-11.77672c-4.36109,-5.50875 -12.58891,-8.51031 -23.51812,-8.51031zM99.44,18.08c8.54562,0 14.70766,2.15406 16.87937,5.89719l1.11234,1.88922l2.15406,0.30016c6.23266,0.88281 10.55844,3.44297 13.20687,7.83938c5.80891,9.56969 2.84266,27.01406 -1.44781,39.03797l-1.43016,3.72547l3.58422,1.80094c0.40609,0.2825 1.48313,1.83625 1.21828,5.085c-0.61797,6.69172 -2.73672,8.475 -3.19578,8.56328h-3.90203l-0.565,3.88438c-1.23594,8.68688 -6.44453,17.60328 -8.15719,18.85688l-2.27766,1.28891v2.63078c0,4.60828 0.05297,8.56328 0.19422,12.74781l-17.37375,9.64031l-17.60328,-9.76391c0.08828,-2.66609 0.07062,-5.19094 0.01766,-7.75109c-0.01766,-1.55375 -0.05297,-3.16047 -0.05297,-4.89078l-0.2825,-2.5425l-1.92453,-1.34188c-1.78328,-1.21828 -7.39797,-10.24063 -8.1925,-18.68031l-0.07062,-4.06094h-4.09625c-0.65328,-0.24719 -2.66609,-2.38359 -3.53125,-8.54563c-0.30016,-3.77844 1.62438,-5.34984 1.62438,-5.34984l2.68375,-1.78328l-0.79453,-3.08984c-5.26156,-20.72844 -4.53766,-35.11828 2.20703,-43.98172c5.50875,-7.23906 15.64344,-11.08813 30.01563,-11.40594zM171.76,117.52c-29.87438,0 -54.24,24.38328 -54.24,54.24c0,29.85672 24.36562,54.24 54.24,54.24c29.87437,0 54.24,-24.38328 54.24,-54.24c0,-29.85672 -24.36562,-54.24 -54.24,-54.24zM171.76,126.56c24.96594,0 45.2,20.23406 45.2,45.2c0,24.96594 -20.23406,45.2 -45.2,45.2c-24.96594,0 -45.2,-20.23406 -45.2,-45.2c0,-24.96594 20.23406,-45.2 45.2,-45.2zM80.33594,141.00281l11.28234,6.26797l-10.31125,12.81844l-8.43969,-10.24062c3.26641,-2.41891 5.84422,-5.27922 7.46859,-8.84578zM167.24,144.64v22.6h-22.6v9.04h22.6v22.6h9.04v-22.6h22.6v-9.04h-22.6v-22.6zM64.975,154.49219l12.90672,15.62578c0.8475,1.04172 2.15406,1.65969 3.51359,1.64203c1.35953,0 2.63078,-0.63563 3.49594,-1.695l8.86344,-11.0175l3.42531,2.77203c0,0 -7.92766,13.61297 -10.20531,28.02047h-68.34734c3.31938,-17.95641 19.33359,-24.295 34.83578,-30.43937c4.00797,-1.58906 7.91,-3.16047 11.51187,-4.90844z"></path></g></g></svg>
+                <svg class="register_ico" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="48" height="48"
+                viewBox="0 0 172 172"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#34495e"><path d="M82.0225,0c-0.87344,0.17469 -1.63937,0.67188 -2.15,1.3975l-24.4025,33.4325c-1.06156,1.51844 -0.73906,3.61469 0.7525,4.73l33.4325,24.295c0.06719,0.08063 0.13438,0.14781 0.215,0.215c1.53188,0.88688 3.48031,0.47031 4.515,-0.9675l24.4025,-33.325c0.55094,-0.73906 0.77938,-1.66625 0.63156,-2.58c-0.13438,-0.90031 -0.63156,-1.72 -1.38406,-2.2575l-33.4325,-24.295c-0.65844,-0.47031 -1.45125,-0.69875 -2.2575,-0.645c-0.1075,0 -0.215,0 -0.3225,0zM126.635,0c-1.63937,0.30906 -2.82187,1.76031 -2.795,3.44v41.28c0,1.89469 1.54531,3.44 3.44,3.44h41.28c1.89469,0 3.44,-1.54531 3.44,-3.44v-41.28c0,-1.89469 -1.54531,-3.44 -3.44,-3.44h-41.28c-0.1075,0 -0.215,0 -0.3225,0c-0.1075,0 -0.215,0 -0.3225,0zM130.72,6.88h34.4v34.4h-34.4zM83.42,8.2775l27.735,20.21l-20.21,27.8425l-27.8425,-20.3175zM2.795,41.28c-1.63937,0.30906 -2.82187,1.76031 -2.795,3.44v40.9575c0,0.1075 0,0.215 0,0.3225c0,0.1075 0,0.215 0,0.3225v40.635c0,0.1075 0,0.215 0,0.3225c0,0.1075 0,0.215 0,0.3225v40.9575c0,1.89469 1.54531,3.44 3.44,3.44h123.84c1.89469,0 3.44,-1.54531 3.44,-3.44v-41.28c0,-1.89469 -1.54531,-3.44 -3.44,-3.44h-37.84v-37.84c0,-1.89469 -1.54531,-3.44 -3.44,-3.44h-37.84v-37.84c0,-1.89469 -1.54531,-3.44 -3.44,-3.44h-41.28c-0.1075,0 -0.215,0 -0.3225,0c-0.1075,0 -0.215,0 -0.3225,0zM6.88,48.16h34.4v34.4h-34.4zM150.07,53.105c-0.18812,0.02688 -0.36281,0.05375 -0.5375,0.1075l-39.13,13.115c-0.87344,0.29563 -1.59906,0.92719 -2.00219,1.74688c-0.40313,0.83312 -0.45688,1.78719 -0.14781,2.66062l13.0075,39.13c0.02688,0.06719 0.06719,0.14781 0.1075,0.215c0.69875,1.67969 2.58,2.52625 4.3,1.935l39.13,-13.115c1.76031,-0.60469 2.71438,-2.52625 2.15,-4.3l-13.115,-39.13c-0.51062,-1.59906 -2.09625,-2.60687 -3.7625,-2.365zM148.4575,60.845l10.8575,32.68l-32.5725,10.8575l-10.8575,-32.5725zM6.88,89.44h34.4v34.4h-34.4zM48.16,89.44h34.4v34.4h-34.4zM6.88,130.72h34.4v34.4h-34.4zM48.16,130.72h34.4v34.4h-34.4zM89.44,130.72h34.4v34.4h-34.4z"></path></g></g></svg>
+            </section>
+            <section class="workplace">
+                <div class="number_data">
+                    <div>
+                        Count of rows<p>{{data.count_of_rows}}</p>
+                    </div>
+                    <div>
+                        Reqests(last hour)<p>{{data.requests}}</p>
+                    </div>
+                    <div>
+                        Answers(last hour)<p>{{data.answers}}</p>
+                    </div>
+                    <div>
+                        New entry(last hour)<p>{{data.new_users}}</p>
+                    </div>
+                </div>
+                <div class="circle">
+                    <div>
+                        Insert ({{data.count_of_insert}})
+                        <div class="canvas">
+                            <svg class="chart" width="100%" height="100%" viewBox="0 0 60 60">
+                                <circle cx="50%" cy="50%" r="15.9" fill="transparent" stroke="#20232C" stroke-width="1.7"></circle>
+                                <circle class="unit1" cx="50%" cy="50%" r="15.91549430918954" stroke-dasharray="{{data.insert_p}} 100"></circle>
+                                <text text-anchor="middle" x="50%" y="55%" style="font-size: 9px;">{{data.insert_p}}%</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        Update ({{data.count_of_update}})
+                        <div class="canvas">
+                            <svg class="chart" width="100%" height="100%" viewBox="0 0 60 60">
+                                <circle cx="50%" cy="50%" r="15.9" fill="transparent" stroke="#20232C" stroke-width="1.7"></circle>
+                                <circle class="unit2" cx="50%" cy="50%" r="15.91549430918954" stroke-dasharray="{{data.update_p}} 100"></circle>
+                                <text text-anchor="middle" x="50%" y="55%" style="font-size: 9px;">{{data.update_p}}%</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        Delete ({{data.count_of_delete}})
+                        <div class="canvas">
+                            <svg class="chart" width="100%" height="100%" viewBox="0 0 60 60">
+                                <circle cx="50%" cy="50%" r="15.9" fill="transparent" stroke="#20232C" stroke-width="1.7"></circle>
+                                <circle class="unit3" cx="50%" cy="50%" r="15.91549430918954" stroke-dasharray="{{data.delete_p}} 100"></circle>
+                                <text text-anchor="middle" x="50%" y="55%" style="font-size: 9px;">{{data.delete_p}}%</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="map">
+                        <div>Maximum delay time<p>2s</p></div>
+                        <div>Minimum delay time<p>1s</p></div>
+                    </div>
+                    <div class="data">
+                        <p>Country</p>
+                        <ol>
+                            <li>Number</li>
+                            <li>Number</li>
+                            <li>Number</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section class="check_db" style="display: none;">
+                <div class="container">
+                    <div class="available_table">
+                        <details>
+                            <summary>Available tables:</summary>
+                            <ul>
+                                <li>users (id, name, enterdate) [3]</li>
+                                <li>reports (id, text, pubdate) [3]</li>
+                                <li>admins (admin) [1]</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="current_table">
+                        Current table: users
+                    </div>
+                    <div class="columns">
+                        Columns: <p>3</p>
+                    </div>
+                </div>
+            </section>
+            <section class="new_user" style="display: none;">
+                <div class="user_data">
+                    <div>
+                        <center><summary>Connected users</summary></center>
+                        <ol>
+                            <li>postgres</li>
+                            <li>moder</li>
+                            <li>test</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <center><summary>Roles (ORM Bridge level)</summary></center>
+                        <ul>
+                            <li>admin: (postgres, moder)</li>
+                            <li>read: (test)</li>
+                            <li>write: ()</li>
+                        </ul>
+                        <center><summary>Roles (PostgreSQL level)</summary></center>
+                        <ul>
+                            <li>admin: (postgres, moder)</li>
+                            <li>read: (test)</li>
+                            <li>write: ()</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="user_rating">
+                    <div>
+                        <center>Users transactions</center>
+                        <ol>
+                            <li>
+                                <details>
+                                    <summary>moder</summary>
+                                    <time>Date > 2022-01-03 18:11:23,844</time><br>
+                                    <span>Reqests > 20</span><br>
+                                    <a href="" class="s_letter">Send letter <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                        width="16" height="16"
+                                        viewBox="0 0 172 172"
+                                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M5.375,26.875h161.25v118.25h-161.25z" fill="#ffeea3"></path><path d="M161.25,32.25v107.5h-150.5v-107.5h150.5M172,21.5h-172v129h172v-129z" fill="#ba9b48"></path><g><path d="M3.225,49.45l67.725,37.625c9.675,5.375 21.5,5.375 32.25,0l67.725,-37.625" fill="#ffeea3"></path><path d="M86,96.75c-6.45,0 -12.9,-2.15 -18.275,-5.375l-67.725,-37.625l5.375,-9.675l67.725,37.625c8.6,4.3 18.275,4.3 26.875,0l67.725,-37.625l4.3,9.675l-67.725,37.625c-5.375,3.225 -11.825,5.375 -18.275,5.375z" fill="#ba9b48"></path></g></g></g></svg>
+                                    </a>
+                                </details>
+                            </li>
+                            <hr>
+                            <li>
+                                <details>
+                                    <summary>postgres</summary>
+                                    <time>Date > 2022-01-03 18:11:23,844</time><br>
+                                    <span>Reqests > 15</span><br>
+                                    <a href="" class="s_letter">Send letter <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                        width="16" height="16"
+                                        viewBox="0 0 172 172"
+                                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M5.375,26.875h161.25v118.25h-161.25z" fill="#ffeea3"></path><path d="M161.25,32.25v107.5h-150.5v-107.5h150.5M172,21.5h-172v129h172v-129z" fill="#ba9b48"></path><g><path d="M3.225,49.45l67.725,37.625c9.675,5.375 21.5,5.375 32.25,0l67.725,-37.625" fill="#ffeea3"></path><path d="M86,96.75c-6.45,0 -12.9,-2.15 -18.275,-5.375l-67.725,-37.625l5.375,-9.675l67.725,37.625c8.6,4.3 18.275,4.3 26.875,0l67.725,-37.625l4.3,9.675l-67.725,37.625c-5.375,3.225 -11.825,5.375 -18.275,5.375z" fill="#ba9b48"></path></g></g></g></svg>
+                                    </a>
+                                </details>
+                            </li>
+                            <hr>
+                            <li>
+                                <details>
+                                    <summary>test</summary>
+                                    <time>Date > 2022-01-03 18:11:23,844</time><br>
+                                    <span>Reqests > 5</span><br>
+                                    <a href="" class="s_letter">Send letter <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                        width="16" height="16"
+                                        viewBox="0 0 172 172"
+                                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M5.375,26.875h161.25v118.25h-161.25z" fill="#ffeea3"></path><path d="M161.25,32.25v107.5h-150.5v-107.5h150.5M172,21.5h-172v129h172v-129z" fill="#ba9b48"></path><g><path d="M3.225,49.45l67.725,37.625c9.675,5.375 21.5,5.375 32.25,0l67.725,-37.625" fill="#ffeea3"></path><path d="M86,96.75c-6.45,0 -12.9,-2.15 -18.275,-5.375l-67.725,-37.625l5.375,-9.675l67.725,37.625c8.6,4.3 18.275,4.3 26.875,0l67.725,-37.625l4.3,9.675l-67.725,37.625c-5.375,3.225 -11.825,5.375 -18.275,5.375z" fill="#ba9b48"></path></g></g></g></svg>
+                                    </a>
+                                </details>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section id="register" class="register" style="display: none;">
+                <form>
+                    <input placeholder="Year"> -
+                    <input placeholder="Month"> -
+                    <input placeholder="Day"><br>
+                    <div class="webs_btn">Filter</div>
+                </form>
+                <pre id="reg_text" class="reg_text"></pre>                    
+            </section>
+        </main>
+    </body>
+</html>

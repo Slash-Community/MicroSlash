@@ -1,0 +1,79 @@
+main {
+    width: 100vw;
+}
+
+form {
+    border-radius: 100% 1px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 40vw;
+    position: relative;
+    background-color: #2A313B;
+    left: 30vw;
+    text-align: center;
+}
+form > input {
+    width: 50%;
+    background-color: #232730;
+    border: none;
+    color: #91959E;
+    padding: 5px;
+}
+
+.text {
+    border: #16181b 3px solid;
+}
+
+.submit {
+    width: 50%;
+    background-color: #16181b;
+    color: #866d2d;
+    border: #866d2d 3px solid;
+    margin-top: 10px;
+}
+
+button {
+    cursor: pointer;
+    top: 20%;
+    right: 15%;
+    width: 75px;
+    height: 75px;
+    border-radius: 100% 100%;
+    position: absolute;
+    background-color: #16181B;
+    color: #866d2d;
+    border: #16181B 3px solid;
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.3), 0 0 rgba(255, 255, 255, 0.06);
+    font-weight: bold;
+}
+
+
+
+.ico {
+    font-size: 15px;
+    text-decoration: none;
+    color: #98a1b6;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.admin {
+    padding: 5px;
+    position: absolute;
+
+    left: 20px;
+    bottom: 20px;
+
+    border: black 2px solid;
+    border-radius: 20px;
+    text-align: center;
+}
+.admin > img:hover {
+    cursor: pointer;
+}
+
+.error {
+    color: rgb(155, 29, 29);
+    font-size: 10px;
+}

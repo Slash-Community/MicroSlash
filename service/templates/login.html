@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>123</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+    </head>
+    <body>
+        <header>
+            Welcome to Slash Bridge
+        </header>
+        <main>
+            <form action="" method="post">
+                <input class="text" type="text" placeholder="Enter your login" name="login"><br>
+                <input class="text"type="password" placeholder="Enter your password" name="password"><br>
+                <!--<input class="submit" type="submit" value="Submit">-->
+                <button>Submit</button>
+
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <script>
+                        alert("Invalid password or login");
+                    </script>
+                    {% endif %}
+                {% endwith %}
+            </form>
+        </main>
+        <div class="admin">
+            <img src="https://img.icons8.com/ios-filled/50/000000/headset.png" width="75%"/>
+        </div>
+        <a class="ico" href="https://icons8.com/icon/9418/наушники">Icon by Icons8</a>
+    </body>
+</html>

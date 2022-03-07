@@ -1,0 +1,29 @@
+.new_user {
+    transition: 300ms;
+    position: relative;
+    width: 93vw;
+    display: grid;
+    grid-template-rows: 30% 30%;
+    height: 100%;
+    left: 5vw;
+}
+
+.user_data {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.user_data > div {
+    padding: 20px;
+}
+
+.user_rating {
+    padding: 20px;
+}
+.s_letter {
+    text-decoration: none;
+    position: relative;
+    margin: 30px;
+    color: #91959E;
+    display: block;
+}
+

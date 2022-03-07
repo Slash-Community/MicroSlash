@@ -1,0 +1,22 @@
+.check_db {
+    transition: 300ms;
+    position: relative;
+    width: 93vw;
+    display: grid;
+    grid-template-rows: 30% 30% 40%;
+    height: 100%;
+    left: 5vw;
+}
+
+.container {
+    position: relative;
+}
+
+.available_table, .current_table, .columns {
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+    left: 10vw;
+    width: 70%;
+    border: #2f343d 2px solid;
+}

@@ -1,0 +1,55 @@
+.register {
+    transition: 300ms;
+    position: relative;
+    width: 93vw;
+    display: grid;
+    grid-template-rows: 30% 30% 40%;
+    height: 100%;
+    left: 5vw;
+    padding: 20px;
+}
+.register > form {
+    text-align: center;
+}
+.register > form > input {
+    color: #91959E;
+    background-color: #232730;
+    border: #16181B 3px solid;
+    padding: 5px;
+}
+.webs_btn {
+    position: relative;
+
+    cursor: pointer;
+    background-color: #16181b8a;
+    width: 25%;
+    color: #866D2D;
+    font-weight: bold;
+    transition: 300ms;
+
+    top: 20px;
+    left: 37%;
+}
+.webs_btn:hover {
+    scale: 1.05;
+    background-color: #16181b77;
+    border: #131414 2px solid;
+}
+
+
+#reg_text
+{
+    position: relative;
+    top: 40px;
+
+    z-index: 1;
+    padding: 10px;
+    border: #2A313B 3px solid;
+    width: 100vw;
+    word-wrap: break-word;
+}
+
+
+mark {
+    background-color: #3b3b2a;
+}
