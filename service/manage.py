@@ -1,8 +1,6 @@
 import sys
 import os
 
-print(sys.argv)
-
 if len(sys.argv) != 1 and sys.argv[1] == "run":
     BASE_APP = os.path.dirname(__file__) + "/Main/main.py"
     BASE_FILE = os.path.abspath(__file__)

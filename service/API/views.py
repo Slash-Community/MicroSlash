@@ -2,9 +2,12 @@ from flask import jsonify, request
 import json
 import os
 
-#from Slash.Core.operations_ import *
-#from Slash.Core.core import *
-#from Slash.types_ import *
+from Slash.Core.operations_ import *
+from Slash.Core.core import *
+from Slash.types_ import *
+
+from .models import Users
+
 
 class ApiViews:
     @staticmethod
@@ -14,6 +17,16 @@ class ApiViews:
     @staticmethod
     def insert(*args):
         json_data = None
+
+        conn = Connection("Slash", "postgres", "root", "127.0.0.1", 5432)
+
+        users = Users()
+        conn.create(users)
+        Operations(conn).insert(
+            users,
+            request.get_json()["columns"],
+            [BasicTypes.ORM_TYPES_LIST[i[0]](i[1]) for i in request.get_json()["data"]]
+        )
 
         with open(str(os.environ.get("JSON_DATA_FILE")), "r") as file_:
             json_data = json.load(file_)
@@ -31,6 +44,16 @@ class ApiViews:
     @staticmethod
     def update(*args):
         json_data = None
+
+        conn = Connection("Slash", "postgres", "root", "127.0.0.1", 5432)
+
+        users = Users()
+        conn.create(users)
+        Operations(conn).update(
+            users,
+            request.get_json()["columns"],
+            [BasicTypes.ORM_TYPES_LIST[i[0]](i[1]) for i in request.get_json()["data"]]
+        )
 
         with open(str(os.environ.get("JSON_DATA_FILE")), "r") as file_:
             json_data = json.load(file_)

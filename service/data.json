@@ -1,9 +1,9 @@
 {
     "count_of_rows": 0,
-    "reqests_lh": 38,
-    "answers_lh": 38,
-    "new_entry_lh": 9,
-    "count_of_insert": 23,
-    "count_of_update": 9,
+    "reqests_lh": 50,
+    "answers_lh": 50,
+    "new_entry_lh": 20,
+    "count_of_insert": 34,
+    "count_of_update": 10,
     "count_of_delete": 6
 }
