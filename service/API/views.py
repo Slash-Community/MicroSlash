@@ -1,9 +1,9 @@
-from flask import jsonify, request
+from flask import request, render_template
 import json
 import os
 
 from Slash.Core.operations_ import *
-from Slash.Core.core import *
+from Slash.Core.core import Connection
 from Slash.types_ import *
 
 from .models import Users
@@ -12,7 +12,7 @@ from .models import Users
 class ApiViews:
     @staticmethod
     def main_display():
-        return "API"
+        return render_template("api.html")
 
     @staticmethod
     def insert(*args):

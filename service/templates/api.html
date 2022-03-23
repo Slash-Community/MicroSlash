@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/api.css') }}">
+{% endblock %}
+
+{% block main %}
+    <center><h2>API doc</h2></center>
+    <main>
+        <!--Insert-->
+        <section>
+            <h3>Insert</h3>
+            <pre>
+            import requests
+
+            r = requests.Session()
+            r.post(
+                "http://127.0.0.1:8888/api/insert",
+                json={
+                    "dbname": "Slash",
+                    "table": "users",
+                    "columns": ["useraname", "password"],
+                    "data": [["TEXT", "M_O_D_E_R"], ["HIDDEN", "123"]],
+                    "condition": ""
+                }
+            )
+            </pre>
+        </section>
+
+        <!--Update-->
+        <section>
+            <h3>Update</h3>
+            <pre>
+                r.post(
+                    "http://127.0.0.1:8888/api/update",
+                    json={
+                        "dbname": "Slash",
+                        "table": "users",
+                        "columns": ["useraname", "password"],
+                        "data": [["TEXT", "m_o_d_e_r"], ["HIDDEN", "123"]],
+                        "condition": ""
+                    }
+                )
+            </pre>
+        </section>
+
+        <!--Select-->
+        <section>
+            <h3>Select</h3>
+            <pre>
+                r.post(
+                    "http://127.0.0.1:8888/api/select",
+                    json={
+                        "table": "Slash",
+                        "columns": [1, 2, 3],
+                        "condition": ""
+                    }
+                )
+            </pre>
+        </section>
+
+        <!--Delete-->
+        <section>
+            <h3>Delete</h3>
+            <pre>
+                r.post(
+                    "http://127.0.0.1:8888/api/delete",
+                    json={
+                        "table": "Slash",
+                        "condition": ""
+                    }
+                )
+            </pre>
+        </section>
+
+        <!--Parameters-->
+        <section>
+            <h3>Parameters</h3>
+            <ul class="params">
+                <li>
+                    <details>
+                        <summary>dbname</summary>
+                        Name of the data base.
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>table</summary>
+                        Table name.
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>columns</summary>
+                        List of the columns, should be str.
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>data</summary>
+                        List of lists. One item of list consists of two items. Type of the field and data.
+                        All types is located in `BasicTypes.ORM_TYPES_LIST`.
+                        <ul>
+                            <li>INT</li>
+                            <li>TEXT</li>
+                            <li>BOOL</li>
+                            <li>DATE</li>
+                            <li>HIDDEN</li>
+                        </ul>
+
+                        "data": [["TEXT", "m_o_d_e_r"], ["HIDDEN", "123"]]
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>condition</summary>
+                        Its too list of lists, one item contain one condition.
+                        
+                        <pre>
+                            [
+                                [books.book, SQLCnd.EQ, Text("C")],
+                                SQLCnd.AND,
+                                [books.book, SQLCnd.EQ, Text("C++")]
+                            ]
+                        </pre>
+                        
+                        For example:
+                        <pre>
+                            [books.book, SQLCnd.EQ, Text("C")]
+
+                            * First element it's, link for column of table. You can get acces to column by column name.
+                            * Second element it's, condition symbol, you need to use SQLCnd to enter condition.
+                                Else it would be return Exception.
+                            * Third element it's data which wrapped in one of ORM types, for cheking input data type.
+                        </pre>
+                    </details>
+                </li>
+            </ul>
+        </section>
+    </main>
+{% endblock %}

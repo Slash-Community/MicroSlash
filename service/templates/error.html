@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{{data.title}}</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
-    </head>
-    <body>
-        <main style="width: 100vw; text-align: center; position: relative;">
-            <div style="width: 40%; padding: 20px; background-color: #2A313B; position: absolute; top: 20vh; left: 30%;">
-                {{data.code}}
-                {{data.error}}                
-            </div>
-        </main>
-    </body>
-</html>
+{% block head %}
+    <title>{{data.title}}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block main %}
+    <main style="width: 100vw; text-align: center; position: relative;">
+        <div style="width: 40%; padding: 20px; background-color: #2A313B; position: absolute; top: 20vh; left: 30%;">
+            {{data.code}}
+            {{data.error}}                
+        </div>
+    </main>
+{% endblock %}

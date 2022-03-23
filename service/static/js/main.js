@@ -1,4 +1,5 @@
 $('document').ready(function () {
+    var homeStatus = false;
 
 	$('.home_ico').on('click', function (e) {
 		e.preventDefault;
@@ -6,6 +7,7 @@ $('document').ready(function () {
         $('.new_user').css('display', 'none');
         $('.register').css('display', 'none');
         $('.check_db').css('display', 'none');
+        homeStatus = true;
 	});
 
 	$('.check_db_ico').on('click', function (e) {
@@ -47,4 +49,8 @@ $('document').ready(function () {
             jQuery(this).html(text);
         });
     });
+
+    while (homeStatus) {
+        console.log("1231");
+    }
 });

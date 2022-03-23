@@ -1,12 +1,7 @@
-import websockets
-import asyncio
-
-s = websockets.WebSocketServer(asyncio.get_event_loop())
-
-#import requests
+import requests
 
 
-#r = requests.Session()
+r = requests.Session()
 #r.post(
 #    "http://127.0.0.1:8888/api/insert",
 #    json={

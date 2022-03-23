@@ -1,0 +1,33 @@
+html {
+    background-color: rgb(153, 117, 51);    
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    border: black 1px solid;
+    border-radius: 20px;
+}
+
+h3 {
+    margin-left: 5%;
+}
+
+.params {
+    list-style-type: none;
+}
+
+ul {
+    margin-left: 5%;
+}
+
+li {
+    marker: none;
+}
+
+/*details {}*/
