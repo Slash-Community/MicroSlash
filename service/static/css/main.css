@@ -14,16 +14,9 @@ body {
     font-size: 25px;
 }
 
-
 header {
-    background: #242b35;
     text-align: center;
     padding: 5px;
-}
-
-
-main {
-    color: #91959E;
 }
 
 .menubar {

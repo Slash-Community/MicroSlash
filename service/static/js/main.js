@@ -1,5 +1,24 @@
 $('document').ready(function () {
-    var homeStatus = false;
+    var client = new WebSocket("ws://localhost:8889/");
+    client.onopen = function(event) {
+        client.send("0");
+    };
+    client.onmessage = function(event) {
+        var data = JSON.parse(event.data);
+
+        $('.count_of_rows_p').text(data["count_of_rows"]);
+        $('.requests_p').text(data["reqests_lh"]);
+        $('.answers_p').text(data["answers_lh"]);
+        $('.new_users_p').text(data["new_entry_lh"]);
+        $('.insert_count').text(data["count_of_insert"]+"%");
+        $('.update_count').text(data["count_of_update"]+"%");
+        $('.delete_count').text(data["count_of_delete"]+"%");
+
+        $('.unit1').attr("stroke-dasharray", data["count_of_insert"] * 100 / data["reqests_lh"] + " 100");
+        $('.unit2').attr("stroke-dasharray", data["count_of_update"] * 100 / data["reqests_lh"] + " 100");
+        $('.unit3').attr("stroke-dasharray", data["count_of_delete"] * 100 / data["reqests_lh"] + " 100");
+        alert("123");
+    }
 
 	$('.home_ico').on('click', function (e) {
 		e.preventDefault;
@@ -7,7 +26,6 @@ $('document').ready(function () {
         $('.new_user').css('display', 'none');
         $('.register').css('display', 'none');
         $('.check_db').css('display', 'none');
-        homeStatus = true;
 	});
 
 	$('.check_db_ico').on('click', function (e) {
@@ -49,8 +67,4 @@ $('document').ready(function () {
             jQuery(this).html(text);
         });
     });
-
-    while (homeStatus) {
-        console.log("1231");
-    }
 });
